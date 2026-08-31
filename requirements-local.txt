@@ -1,0 +1,16 @@
+﻿-r requirements.txt
+
+# Optional dependencies for --mode local.
+yt-dlp>=2024.1.1
+faster-whisper>=1.0.0
+openai>=1.0.0
+google-genai>=1.0.0
+opencv-python>=4.8.0
+# Native CUDA libraries required by faster-whisper/CTranslate2 on Windows.
+nvidia-cublas-cu12>=12.9.2; platform_system == "Windows"
+nvidia-cudnn-cu12>=9.25.1; platform_system == "Windows"
+nvidia-cuda-runtime-cu12>=12.9.79; platform_system == "Windows"
+# torch is only needed if you want CUDA Whisper. CPU works without it.
+# torch>=2.0
+
+

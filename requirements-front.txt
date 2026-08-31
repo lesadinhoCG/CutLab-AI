@@ -1,0 +1,6 @@
+﻿fastapi
+uvicorn[standard]
+python-dotenv
+streamlit>=1.30.0,<2.0.0
+
+

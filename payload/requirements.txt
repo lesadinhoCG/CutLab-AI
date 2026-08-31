@@ -1,0 +1,42 @@
+﻿# CutLab AI - dependencias Python unificadas
+#
+# Dependencias externas que NAO sao instaladas pelo pip:
+# - FFmpeg no PATH, com os filtros libass/ASS
+# - Driver NVIDIA compativel, apenas para aceleracao CUDA/NVENC
+
+# Base e configuracao
+requests>=2.31.0,<3.0.0
+python-dotenv>=1.0.0,<2.0.0
+
+# Servidor e interface local
+fastapi>=0.115.0,<1.0.0
+uvicorn[standard]>=0.30.0,<1.0.0
+pydantic>=2.8.0,<3.0.0
+
+# Download, transcricao e analise de video
+yt-dlp>=2024.1.1
+faster-whisper>=1.0.0,<2.0.0
+ctranslate2>=4.4.0,<5.0.0
+
+# Fixado nesta versao porque o CutLab usa VideoCapture e CascadeClassifier.
+opencv-python==4.10.0.84
+
+# Provedores de IA usados para destaques e metadados
+openai>=1.0.0,<3.0.0
+google-genai>=1.0.0,<2.0.0
+
+# API oficial e OAuth do YouTube
+google-api-python-client>=2.120.0,<3.0.0
+google-auth>=2.28.0,<3.0.0
+google-auth-httplib2>=0.2.0,<1.0.0
+google-auth-oauthlib>=1.2.0,<2.0.0
+
+# Opcional: o codigo original usa PyTorch apenas ao detectar CUDA quando
+# LOCAL_WHISPER_DEVICE=auto. Para evitar uma instalacao muito grande, prefira
+# definir LOCAL_WHISPER_DEVICE=cuda (NVIDIA) ou cpu no arquivo .env.
+# torch>=2.0.0,<3.0.0
+
+# Timezone database for YouTube scheduling on Windows
+tzdata>=2025.1
+
+
