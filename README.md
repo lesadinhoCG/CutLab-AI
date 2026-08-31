@@ -10,6 +10,28 @@ Aplicação local para transformar vídeos longos em cortes verticais prontos pa
 - Permite revisar os cortes pela interface web local.
 - Prepara metadados e publicação no YouTube.
 
+## APIs e modelos aceitos
+
+O CutLab permite escolher o provedor na interface. Os modelos disponíveis podem mudar conforme o provedor e a conta; use os nomes abaixo como referência ou informe outro modelo compatível no `.env`.
+
+| Provedor | Variável de chave | Modelos configurados |
+|---|---|---|
+| Groq | `GROQ_API_KEY` | `qwen/qwen3.6-27b`, `openai/gpt-oss-20b`, `openai/gpt-oss-120b` |
+| NVIDIA NIM | `NVIDIA_API_KEY` | `nvidia/nemotron-3.5-lightning-30b-a3b`, `nvidia/llama-3.3-nemotron-super-49b-v1.5`, `nvidia/nemotron-3-super-120b-a12b` |
+| OpenAI | `OPENAI_API_KEY` | `gpt-4o-mini` (ou outro modelo compatível) |
+| Google Gemini | `GEMINI_API_KEY` | `gemini-3.6-flash` (ou outro modelo disponível na sua conta) |
+| LM Studio | não exige chave | modelos carregados localmente e expostos pela API compatível com OpenAI |
+
+Para Groq, você pode definir o modelo no `.env`:
+
+```env
+GROQ_API_KEY=sua_chave_aqui
+GROQ_BASE_URL=https://api.groq.com/openai/v1
+GROQ_MODEL=qwen/qwen3.6-27b
+```
+
+Para os demais provedores, use `NVIDIA_MODEL`, `OPENAI_MODEL`, `GEMINI_MODEL` ou `LMSTUDIO_MODEL`. A API MuAPI também permanece disponível para o modo de processamento compatível com essa integração, usando `MUAPI_API_KEY`.
+
 ## Tutorial completo para Windows
 
 ### 1. Pré-requisitos
