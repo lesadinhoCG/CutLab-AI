@@ -30,7 +30,43 @@ GROQ_BASE_URL=https://api.groq.com/openai/v1
 GROQ_MODEL=qwen/qwen3.6-27b
 ```
 
-Para os demais provedores, use `NVIDIA_MODEL`, `OPENAI_MODEL`, `GEMINI_MODEL` ou `LMSTUDIO_MODEL`. A API MuAPI também permanece disponível para o modo de processamento compatível com essa integração, usando `MUAPI_API_KEY`.
+Para NVIDIA NIM:
+
+```env
+NVIDIA_API_KEY=sua_chave_aqui
+NVIDIA_BASE_URL=https://integrate.api.nvidia.com/v1
+NVIDIA_MODEL=nvidia/nemotron-3.5-lightning-30b-a3b
+```
+
+Para OpenAI:
+
+```env
+OPENAI_API_KEY=sua_chave_aqui
+OPENAI_MODEL=gpt-4o-mini
+```
+
+Para Google Gemini:
+
+```env
+GEMINI_API_KEY=sua_chave_aqui
+GEMINI_MODEL=gemini-3.6-flash
+```
+
+Para LM Studio, inicie o servidor local compatível com OpenAI e informe o modelo carregado:
+
+```env
+LMSTUDIO_BASE_URL=http://localhost:1234/v1
+LMSTUDIO_MODEL=nome-do-modelo-carregado
+```
+
+Para MuAPI:
+
+```env
+MUAPI_API_KEY=sua_chave_aqui
+MUAPI_BASE_URL=https://api.muapi.ai/api/v1
+```
+
+Use apenas um provedor LLM por vez na interface. O nome do modelo pode ser alterado conforme os modelos disponíveis na sua conta.
 
 ## Tutorial completo para Windows
 
